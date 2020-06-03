@@ -1,0 +1,52 @@
+ .contenu {
+     display: none
+ }
+
+ .contenu.active {
+     display: block;
+     padding: 20px;
+     width: 1000px;
+ }
+
+ .menu .active a {
+     background: white;
+     color: #8924AD;
+ }
+
+ .menu li a {
+     display: inline-block;
+     color: white;
+     padding: 10px 15px;
+     box-shadow: 0 1px 3px rgba(0, 0, 0, .8)
+ }
+
+ ul.menu li {
+     float: left;
+     display: block;
+    background: #8924AD;
+    
+     /*    display: inline-block*/
+ }
+
+ ul.menu {
+     clear: both;
+     /*    neutralise les float */
+     display: table;
+     width: 400px;
+     margin: auto;
+     display: flex;
+     flex-direction: row;
+ }
+
+ .plusieurs-contenus {
+     position: relative;
+     padding: 20px;
+
+     box-shadow: 0 1px 3px rgba(0, 0, 0.8);
+     width: 1000px;
+     margin: auto
+ }
+
+ a {
+     text-decoration: none
+ }

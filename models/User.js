@@ -5,7 +5,7 @@ const userSchema = new Schema({
 nom: String,
 prenom: String,
 email: String,
-password: {
+motDePasse: {
   min: 4,
   required: true,
   type: String,

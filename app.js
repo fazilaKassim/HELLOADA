@@ -9,7 +9,8 @@ const hbs = require("hbs");
 const app = express();
 const session = require("express-session");
 const flash = require("connect-flash");
-const dev_mode = false;
+const dev_mode = true;
+const log = require('./libs/log')(module);
 
 // connection à la base de donnée
 require("./config/mongo");
@@ -46,18 +47,15 @@ if (dev_mode === true) {
 app.use(require("./middlewares/exposeLoginStatus")); // expose le status de connexion aux templates
 app.use(require("./middlewares/exposeFlashMessage")); // affiche les messages dans le template
 
-// app.use(express.favicon()); // use standard favicon
-// app.use(express.bodyParser()); // JSON parsing
-// app.use(express.methodOverride()); // HTTP PUT and DELETE support
-// app.use(app.router); // simple route management
+app.get('/api', function (req, res) {
+  res.send('API is running');
+});
 
 
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
+app.use(require('./routes/auth'));
 
-app.get('/api', function (req, res) {
-    res.send('API is running');
-});
 
 
 // catch 404 and forward to error handler

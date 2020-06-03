@@ -7,15 +7,23 @@
     "dev": "nodemon ./bin/www -e .hbs,.js"
   },
   "dependencies": {
+    "bcrypt": "^4.0.1",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.4.4",
     "debug": "~2.6.9",
-    "express": "~4.16.1",
+    "express": "^4.16.4",
     "express-session": "^1.17.1",
-    "hbs": "~4.0.4",
+    "hbs": "^4.1.1",
     "http-errors": "~1.6.3",
+    "modulename": "0.0.4",
+    "moment": "^2.26.0",
     "mongoose": "^5.9.16",
-    "morgan": "~1.9.1"
+    "morgan": "~1.9.1",
+    "multer": "^1.4.2",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemon": "^2.0.4",
+    "oauth2orize": "^1.11.0",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "dotenv": "^8.2.0"
