@@ -16,20 +16,49 @@ require("./config/mongo");
 
 require("./helpers/hbs");
 
-
-
-// view engine setup
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'hbs');
-
 app.use(logger('dev'));
-app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
 app.use(cookieParser());
+
+app.set('views', path.join(__dirname, 'views'));
 app.use(express.static(path.join(__dirname, 'public')));
+
+
+app.set('view engine', 'hbs');
+hbs.registerPartials(__dirname + "/views/partials");
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    resave: true,
+    saveUninitialized: true,
+  })
+);
+
+app.use(flash());
+
+if (dev_mode === true) {
+  app.use(require("./middlewares/devMode")); // active le mode dev pour éviter les deconnexions
+  app.use(require("./middlewares/debugSessionInfos")); // affiche le contenu de la session
+}
+app.use(require("./middlewares/exposeLoginStatus")); // expose le status de connexion aux templates
+app.use(require("./middlewares/exposeFlashMessage")); // affiche les messages dans le template
+
+// app.use(express.favicon()); // use standard favicon
+// app.use(express.bodyParser()); // JSON parsing
+// app.use(express.methodOverride()); // HTTP PUT and DELETE support
+// app.use(app.router); // simple route management
+
 
 app.use(require('./routes/index'));
 app.use(require('./routes/users'));
+
+app.get('/api', function (req, res) {
+    res.send('API is running');
+});
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
