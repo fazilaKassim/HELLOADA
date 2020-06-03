@@ -1,10 +1,54 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>{{title}}</title>
-    <link rel='stylesheet' href='/css/style.css' />
-  </head>
-  <body>
-    {{{body}}}
-  </body>
+
+<head>
+  <title>{{title}}</title>
+  <meta name="Zila Henne "
+    content="Prestation de henne.Prise de rendez-vous en ligne.Cadre, Bougie et henne 100% naturelle">
+  <meta name="zila henne" content="MOHAMED-KASSIM Fazila 2020">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel='stylesheet' href='/css/style.css' />
+  {{#each js}}
+  <script type="module" src="/js/{{this}}.js"></script>
+  {{/each}}
+</head>
+
+<body>
+  <header>
+    <figure><img src="/img/logo.PNG" alt=""></figure>
+    <nav id="navbar">
+      <ul id="nav">
+        <li class="link"><a href="/"></a></li>
+        <li class="link"><a href="/concept">Concept</a></li>
+        <li class="link"><a href="/Connection">Se connecter</a>
+          <ul id="menu-deroulant"> 
+            <li class="link-deroulant"> <a href="/candidat">Candidat</a></li>
+            <li class="link-deroulant"> <a href="/entreprise">Entreprise</a></li>
+          </ul>
+        </li>
+        <li class="link"><a href="/inscription">S'inscrire</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  {{{body}}}
+
+  <footer>
+<section id="footer">
+  <article class="footer"> <a href="www.helloada.fr ">La communaut&eacute; HELLOADA</a> </article>
+  <article class="footer"><ul>
+    <li><a href="/conditionUtilisation">Conditions d'utilisation</a></li>
+    <li><a href="/mentionLegal">Mentions legales</a></li>
+  </ul></article>
+  <article class="footer"> <ul>
+    <li><a href="/nousSuivre">Nous suivre</a></li>
+    <li><a href="/contact">Contact </a></li>
+  </ul></article>
+</section>
+
+  </footer>
+</body>
+
 </html>

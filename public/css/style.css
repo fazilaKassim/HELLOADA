@@ -1,8 +1,29 @@
+@import url(navbar.css);
+@import url(footer.css);
+
+
+*{margin: 0;
+padding: 0;
+box-sizing: border-box;}
+
 body {
-  padding: 50px;
+
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+
+li {
+  list-style: none;
 }
+
+
+a {
+  text-decoration: none;
+}
+
+/* 
+#F72585 Rose
+#8924AD Violet
+#30CA3 Bleu foncé
+#4361EE Bleu Canard
+#4CC9FO Bleu cyan */
